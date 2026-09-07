@@ -20,13 +20,23 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Tauri app
+      - name: Build Windows installer (NSIS)
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          args: --bundles nsis
           tagName: app-v__VERSION__
           releaseName: 'Заявки Widget v__VERSION__'
           releaseBody: 'Windows build of the corporate requests widget.'
           releaseDraft: true
           prerelease: false
+
+      - name: Upload Windows installer and executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: zayavki-widget-windows
+          path: |
+            src-tauri/target/release/bundle/nsis/*
+            src-tauri/target/release/zayavki-widget.exe
+          if-no-files-found: error
