@@ -27,12 +27,6 @@
   },
   "bundle": {
     "active": true,
-    "targets": ["nsis", "msi"],
-    "windows": {
-      "nsis": {
-        "installMode": "perUser",
-        "startMenuFolder": "Заявки"
-      }
-    }
+    "targets": ["nsis", "msi"]
   }
 }
