@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { open } from '@tauri-apps/plugin-shell';
 import './styles.css';
 
-const JOTFORM_APP_URL = 'https://www.jotform.com/app/';
+const JOTFORM_APP_URL = 'https://app.jotform.com/262494997278379';
 
 function App() {
   const openSystem = async () => {
