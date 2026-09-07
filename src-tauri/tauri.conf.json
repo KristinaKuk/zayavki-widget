@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Заявки",
+  "version": "0.1.0",
+  "identifier": "ru.zayavki.widget",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Заявки",
+        "width": 360,
+        "height": 470,
+        "resizable": false,
+        "decorations": false,
+        "alwaysOnTop": true,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "windows": {
+      "nsis": {
+        "installMode": "perUser",
+        "startMenuFolder": "Заявки"
+      }
+    }
+  }
+}
